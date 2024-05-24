@@ -6,6 +6,113 @@
         <title>Formulario</title>
     </head>
     <body>
+        <form action = "" method = "POST">
+            <label>1. QUE TIPO DE EVENTO ES</label><br>
+            <input type="text" name="tipoEvento" value="" ><br><br>
+
+            <label>2. CUANTOS INVITADOS SON?</label><br>
+            <input type="text" name="cantidadInvitados" value="" ><br><br>
+            
+            <label>3. QUE COLORES QUIERE PARA ADORNAR EL SALON</label><br>
+            <select name = "colores" >
+                <option value = "Teacher">Teacher</option>
+            </select><br><br>
+
+            <label>4. ELIJA SU MENU PARA SU EVENTO</label><br>
+            <div>
+                <label>CREMAS:</label><br>
+                <input type="checkbox" name="cremas" value="Elote">
+                <label for="cremas">Elote</label><br>
+
+                <input type="checkbox" name="cremas" value="Champiñon">
+                <label for="cremas">Champiñon</label><br>
+
+                <input type="checkbox" name="cremas" value="Poblano: Chile poblano">
+                <label for="cremas">Poblano: Chile poblano</label><br>
+            </div><br>
+
+            <div>
+                <label>PASTAS:</label><br>
+                <input type="checkbox" name="pastas" value="provenzal">
+                <label for="pastas">Provenzal: Pasta con crema de cilantro</label><br>
+
+                <input type="checkbox" name="pastas" value="italiana">
+                <label for="pastas">Italiana: Pasta en salsa de jitomate</label><br>
+
+                <input type="checkbox" name="pastas" value="hawaiana">
+                <label for="pastas">Hawaiana</label><br>
+            </div><br>
+
+            <div>
+                <label>PLATO FUERTE:</label><br>
+                <input type="checkbox" name="platoFuerte" value="Orange">
+                <label for="platoFuerte">Orange: Pierna y muslo en salsa de naranja</label><br>
+
+                <input type="checkbox" name="platoFuerte" value="Almendrado">
+                <label for="pastas">Almendrado: Pierna y muslo o pechuga en salsa de almendra</label><br>
+
+                <input type="checkbox" name="platoFuerte" value="delicia">
+                <label for="platoFuerte">Delicia: Pechuga rellena de jamón y queso en crema de chipotle</label><br>
+            </div><br>
+
+            <div>
+                <label>Ingrese el número de invitados:</label><br>
+                <label>Adultos | Niños</label><br>
+                <input type="number" id="invitadosAdultos" name="invitadosAdultos" min="100" max="500">
+                <input type="number" id="invitadosNinios" name="invitadosNinios" min="100" max="500">
+            </div><br>
+
+            <div>
+                <label>Seleccione la fecha de su evento:</label><br>
+                <input type="date" name="apartadoEvento" value="">
+            </div><br>
+
+            <div>
+                <label>Seleccione el horario de su evento:</label><br>
+                <select name = "horario" >
+                    <option value = "horario">Elige el horario</option>
+                </select><br><br>
+            </div>
+
+            <div>
+                <label>Indique el número de platillos que desea comprar:</label>
+                <input type="number" id="numPlatillos" name="numPlatillos" min="0" max="50"><br>
+                <label>(Costo por persona $200 mxm)</label>
+            </div><br>
+
+            <div>
+                <label>Servicios que desea incluir:</label><br>
+                <input type="checkbox" name="musica" value="Música">
+                <label for="musica">Música</label><br>
+
+                <input type="checkbox" name="meseros" value="Meseros">
+                <label for="meseros">Meseros</label>
+                <input type="number" id="numMeseros" name="numMeseros" min="0" max="50"><br>
+
+                <input type="checkbox" name="barra" value="barra">
+                <label for="barra">Barra</label><br>
+                <input type="checkbox" name="parking" value="parking">
+                <label for="parking">Parking</label><br>
+            </div><br>
+
+            <div>
+                <fieldset>
+                    <legend><b>Información de cliente</b></legend>
+                    <label>NOMBRE</label><br>
+                    <input type="text" name="nombre" value="" ><br><br>
+                    <label>TELEFONO</label><br>
+                    <input type="text" name="telefono" value="" ><br><br>
+                    <label>CORREO</label><br>
+                    <input type="text" name="correo" value="" ><br><br>
+                </fieldset>
+            </div><br>
+
+            <div>
+                <button type = "submit" class = "boton"><span>GUARDAR Y GENERAR CONTRATO</span></button>
+            </div>
+        </form>
+
+        <!--
         <p>¿Que tipo de Evento es?</p>
         <input type="text" required>
         <p>¿Cuantos Invitados son?</p>
@@ -20,4 +127,5 @@
 			<li>Salchicha</li>
 		</ol>
         <input type="text" required>
+        -->
     </body>
