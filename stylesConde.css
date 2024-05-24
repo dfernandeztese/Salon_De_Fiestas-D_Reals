@@ -1,0 +1,18 @@
+body{
+    background-image: url("/imagen 6.jpeg");
+}
+.btn{
+    background-color: beige;
+    padding: 11px;
+    display: inline-block;
+    text-decoration: none;
+}
+li{
+    color: aliceblue;
+}
+h1{
+    color: aliceblue;
+}
+b{
+    color: aliceblue;
+}
