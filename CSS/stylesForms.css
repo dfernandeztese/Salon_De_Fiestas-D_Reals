@@ -1,0 +1,8 @@
+body{
+    background-image: url("/ImagenNieve.jpg");
+    background-color: #515151 ;
+}
+label{
+    color: white;
+    font-family: cursive;
+}

@@ -1,0 +1,17 @@
+body{
+    background-image: url("/ImagenNieve.jpg");
+    background-color: #515151 ;
+}
+p{
+    color: white;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 24px;
+}
+h1{
+    color: white;
+    font-family: cursive;
+}
+h2{
+    color: white;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}

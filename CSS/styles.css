@@ -1,0 +1,50 @@
+body{
+    background: url("IMG/ImagenNieve.jpg");
+    background-color: #515151 ;
+}
+
+p{
+    color: white;
+    font-family: cursive;
+    font-size: 18px;
+}
+
+legend{
+    color: white;
+    font-family: cursive;
+    font-size: 18px;
+}
+h1{
+    color: white;
+}
+.btn{
+    background-color: beige;
+    padding: 11px;
+    display: inline-block;
+    text-decoration: none;
+    color:chocolate;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    width: 200px
+}
+.bton{
+    background-color: beige;
+    padding: 11px;
+    display: inline-block;
+    text-decoration: none;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color:brown;
+}
+
+.orden{
+    display: flex;
+    justify-content: space-between;
+}
+
+.orden1{
+    width: 200px;
+}
+
+.orden3{
+    display: flex;
+    justify-content: space-evenly;
+}
