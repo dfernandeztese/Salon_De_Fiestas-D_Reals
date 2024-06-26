@@ -1,0 +1,66 @@
+/* styles.css */
+body {
+  margin: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, sans-serif;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+
+.contenido {
+  padding-top: 60px; /* Altura de la barra superior para evitar superposición */
+}
+
+section {
+  padding: 20px;
+}
+
+.icono {
+  width: 150px;
+  height: 30px;
+}
+
+.orden{
+  display: flex;
+  justify-content: space-between;
+}
+
+.orden1{
+  width: 200px;
+}
+
+.ordenIconos{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.alineacionIconos{
+text-align: center;
+}
+
+.nuestroServicio{
+  width: 210px;
+  height: 150px;
+}

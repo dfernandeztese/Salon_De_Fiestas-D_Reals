@@ -1,76 +1,156 @@
 <!DOCTYPE html>
-<html lang = "en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name = "viewport">
-    <title>Salon D'REALS</title>
-    <link rel="stylesheet" href="CSS/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D'REALS</title>
+    <link rel="stylesheet" href="CSS/Style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <p><h1>Salon D'REALS</h1></p>
-    <a class="bton" href="index.html">Inicio</a>
-    <a class="bton" href="servicios.html">Servicios</a>
-    <a class="bton" href="salones.html">Salones</a>
-
-    <p>¡Bienvenidos al <b>Salon de Eventos "D'REALS"</b>! Estamos encantados de darles la más cordial
-        bienvenida a nuestro espacio unico y elegante, diseñado para hacer de su evento 
-        una experencia inolvidable. Desde bodas y cumpleaños hasta conferencias y celebraciones coprporativas,
-        estamos aqui para hacer realidad sus sueños. ¡Bienvenidos a un mundo de elegancia y servicio excepcional!</p>
-
-    <div class = "orden">
-        <div class = "orden2">
-            <form action = "salonLaCondesa.html">
-                <button type = "submit" class = "btn">Salon La Condesa</button>
-            </form>
-            <img src="https://www.salonmagno.com.mx/assets/img/Mesa_de_honor_Salon_en_Ecatepec.jpg" width="200px" height="150px">
-        </div>
-
-        <div class = "orden2">
-            <form action = "salonClavería.html">
-                <button type = "submit" class = "btn">Salon Claveria</button>
-            </form>
-            <img src="https://cdn0.bodas.com.mx/vendor/8311/3_2/640/jpg/12_5_178311-168122963571667.jpeg" width="200px" height="150px">
-        </div>
-
-        <div class = "orden2">
-            <form action = "salonAzcapotzalco.html">
-                <button type = "submit" class = "btn">Salon Azcapotzalco</button>
-            </form>
-            <img src="https://i0.wp.com/presidenteicmexico.com/wp-content/uploads/2022/08/0L0A1499-como-objeto-inteligente-1.jpg?fit=375%2C500&ssl=1" width="200px" height="150px">
-        </div>
+    <div class="barra-superior">
+        <ul>
+            <li><a class="active" href="index.html"><img alt = "HTML 5 Icon" src = "IMG/icono.png" class = "icono"></a></li>
+            <li><a href="index.html">Inicio</a></li>
+        </ul>
     </div>
-
-    <div class = "orden3">
-        <div class = "orden2">
-            <form action = "salonElRosario.html">
-                <button type = "submit" class = "btn">Salon El Rosario</button>
-            </form>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTiKHo92LZHWW_9aDCHAZ3qHpWMOnMq_kx5GciswV9WQ&s" width="200px" height="150px">
+    <div>
+        <div>
+                <h1 class = "alineacionIconos"><b>BIENVENIDOS A D'REALS</b></h1>
+                <div class="container">
+                    <div id = "theCarousel" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#theCarousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#theCarousel" data-slide-to="1"></li>
+                                <li data-target="#theCarousel" data-slide-to="2"></li>
+                                <li data-target="#theCarousel" data-slide-to="3"></li>
+                            </ol>
+                  
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                          <img src="IMG/Image1.jpeg" alt="Ilustracion" > 
+                            <div class="carousel-caption d-none d-md-block">
+                            </div>
+                        </div>
+                
+                        <div class="item">
+                          <img src="IMG/Image2.jpeg" alt="fotografia" width="600" height="424"> 
+                           <div class="carousel-caption d-none d-md-block">
+                            </div>
+                        </div>
+                  
+                        <div class="item">
+                            <img src="IMG/Image3.jpeg" alt="pintura" width="600" height="424">
+                            <div class="carousel-caption d-none d-md-block">
+                            </div>
+                        </div>
+                        <div class="item">
+                          <img src="IMG/Image4.jpeg" alt="diseno" width="600" height="424"> 
+                          <div class="carousel-caption d-none d-md-block">
+                          </div>
+                        </div>
+                      <a class="left carousel-control" href="#theCarousel" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">anterior</span>
+                      </a>
+                      <a class="right carousel-control" href="#theCarousel" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">siguiente</span>
+                      </a>
+                    </div>
+                </div>
         </div>
-
-        <div class = "orden2">
-            <form action = "salonTacubaya.html">
-                <button type = "submit" class = "btn">Salon Tacubaya</button>
-            </form>
-            <img src="https://cdn0.bodas.com.mx/article-vendor/8463/original/1280/jpg/opengo-00401_5_68463-167166419540430.jpeg" width="200px" height="150px">
+        <div>
+            <section>
+                <h2 class = "alineacionIconos">Nuestro Proposito</h2>
+                <p>Hacer de su celebración un momento inolvidable para usted y sus invitados.
+                    Quienes conformamos Diamante no solo asumimos el compromiso de brindarle una atención cordial y personalizada, también utilizamos recursos de la más alta calidad para asegurarle un servicio innovador, de alto prestigio y con el mejor ambiente de la zona.
+                </p>
+            </section>    
         </div>
+        <div>
+            <section>
+                <h2 class = "alineacionIconos">Nuestro Servicio</h2>
+                <p>Sorprenda a sus invitados con una entrada espectacular a través de nuestra rampa!</p>
+                <p>Disfrute lo mejor de la música grabada y en vivo, deleite su paladar con nuestro servicio de alimentos y bebidas, siempre en la comodidad de nuestras instalaciones. No olvide que puede personalizar su evento gracias a nuestra gama de servicios adicionales.</p>
+            </section>
+        </div>
+        <div class = "ordenIconos">
+                <div class = "alineacionIconos">
+                    <img src = "IMG/Edificio_icono.png" width = "100px" height = "80px">
+                    <h4>Contamos con amplios salones en CDMX y EDOMEX</h4>
+                </div>
+                <div class = "alineacionIconos">
+                    <img src = "IMG/Platillo_icono.png" width = "100px" height = "80px">
+                    <h4>Nuestro Menú está elaborado con alimentos frescos y de alta calidad</h4>
+                </div>
+                <div class = "alineacionIconos">
+                    <img src = "IMG/Paquete_icono.png" width = "100px" height = "80px">
+                    <h4>Contamos con paquetes de acuerdo a sus necesidades y presupuesto</h4>
+                </div>
+        </div>
+        <div>
+            <h1 class = "alineacionIconos"><b>NUESTRO SERVICIO</b></h1>
+        </div>
+        <div class = "ordenIconos">
+            <div class = "alineacionIconos">
+                <h4><b>SERVICIO DE MESEROS</b></h4>
+                <img class = "nuestroServicio" src = "IMG/Meseros.jpeg">
+            </div>
+            <div class = "alineacionIconos">
+                <h4><b>MESA DE HONOR</b></h4>
+                <img class = "nuestroServicio" src = "IMG/Mesa_de_honor.jpeg">
+            </div>
+            <div class = "alineacionIconos">
+                <h4><b>DJ</b></h4>
+                <img class = "nuestroServicio" src = "IMG/Dj.png">
+            </div>
+        </div>
+        <div class = "ordenIconos">
+            <div class = "alineacionIconos">
+                <h4><b>MESA DE DULCES</b></h4>
+                <img class = "nuestroServicio" src = "IMG/Mesa_de_dulces.jpeg">
+            </div>
+            <div class = "alineacionIconos">
+                <h4><b>GRUPO EN VIVO</b></h4>
+                <img class = "nuestroServicio" src = "IMG/Grupo_en_vivo.jpeg">
+            </div>
+            <div class = "alineacionIconos">
+                <h4><b>CAMARA 360°</b></h4>
+                <img class = "nuestroServicio" src = "IMG/Camara_360.jpeg">
+            </div>
+        </div>
+        <div>
+            <h3 class = "alineacionIconos">HAGA QUE SU EVENTO SEA UNICO E INOLVIDABLE</h3>
+        </div>
+        <div class = "ordenIconos">
+                <div class = "alineacionIconos">
+                    <h5>Contamos con gente con las mejores ideales para darle un toque especial a su fiesta, para conocerlas, seleccione primero el salón de su interés.</h5>
+                </div>
+                <div class = "alineacionIconos">
+                    <form action = "" method = "POST">
+                        <select name = "seleccionarSalon">
+                            <option value = "">Salón de interés (Requerido)</option>
+                            <option value = "">Azcapotzalco</option>
+                            <option value = "">Cd. Azteca</option>
+                            <option value = "">Claveria</option>
+                            <option value = "">El Rosario</option>
+                            <option value = "">La Condesa</option>
+                            <option value = "">Tacubaya</option>
+                        </select><br><br>
+                        <button type = "submit">CONOCER SALÓN</button>
+                    </form>
+                </div>
+        </div>
+        <div class = "alineacionIconos">
+            <div><h3>Contacto</h3></div>
+            <div class = "">Av. Central 429 CD. Azteca, Ecatepec, Edomex.</div>
+            <div>Estamos cenrca del metro Cd. Azteca y del Mexibus Quinto Sol a un lado de Plaza Azteca</div>
+            <div class = "">Teléfono: 55-8954-9165 Ext: 621</div>
+            <div class = "">contacto@dreals.com.mx</div>
+          </div>
     </div>
-
-        <p>
-            <i>
-                <b>
-                    CONTACTO
-                </b>
-            </i>
-        </p>
-        <p>
-            <b>Direccion:</b> Calle Juan Escutia 90, Colonia Condesa, Cuauhtémoc, 06140 Ciudad de México, CDMX
-        </p>
-        <p>
-            <b>Telefono:</b>55 4024 0972
-        </p>
-        <p>
-            <b>Correo:</b>SalonDREALS@gmail.com
-        </p>
-    </body>
+</body>
 </html>
