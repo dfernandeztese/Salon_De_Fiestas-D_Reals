@@ -1,4 +1,3 @@
-/* styles.css */
 body {
   margin: 0;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, sans-serif;
@@ -9,7 +8,11 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
+  background-color: #F1B434;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 li {
@@ -25,12 +28,20 @@ li a {
 }
 
 li a:hover {
-  background-color: #111;
+  background-color: #F4C562;
 }
 
+.iconoLogin {
+  margin-left: auto;
+}
+
+.iconoLoginImg {
+  width: 25px;
+  height: 25px;
+}
 
 .contenido {
-  padding-top: 60px; /* Altura de la barra superior para evitar superposición */
+  padding-top: 60px;
 }
 
 section {
@@ -56,11 +67,133 @@ section {
   justify-content: space-evenly;
 }
 
-.alineacionIconos{
-text-align: center;
+.iconosAlineacion{
+  text-align: center;
+}
+
+.iconosNuestroServicio{
+  width: 100px;
+  height: 80px;
 }
 
 .nuestroServicio{
   width: 210px;
   height: 150px;
+}
+
+/*.imagenesCarrucel{
+  width: 700px;
+  height: auto;
+}*/
+
+.carousel {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.carousel-inner {
+  text-align: center;
+}
+
+.carousel-inner .item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-inner .item img {
+  margin: 0 auto;
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  padding-left: 0;
+  margin-left: 0;
+  list-style: none;
+}
+
+.carousel-indicators li {
+  box-sizing: content-box;
+  flex: 0 1 auto;
+  width: 10px;
+  height: 10px;
+  margin-right: 3px;
+  margin-left: 3px;
+  text-indent: -999px;
+  cursor: pointer;
+  background-color: #000 \9;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 0;
+  border-radius: 50%;
+}
+
+.carousel-indicators .active {
+  background-color: #fff;
+}
+
+/* Página Web Responsiba*/
+@media screen and (max-width: 768px) {
+  .icono {
+    width: 100px;
+    height: 20px;
+  }
+  
+  li a {
+    padding: 10px 12px;
+  }
+  
+  .nuestroServicio {
+    width: 400px;
+    height: 230px;
+  }
+
+  .iconosNuestroServicio{
+    width: 120px;
+    height: 100px;
+  }
+  
+  .ordenIconos {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .carousel-inner .item {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .icono {
+    width: 80px;
+    height: 15px;
+  }
+  
+  li a {
+    padding: 8px 10px;
+  }
+  
+  .nuestroServicio {
+    width: 120px;
+    height: 80px;
+  }
+  
+  .ordenIconos {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .carousel-inner .item {
+    flex-direction: column;
+  }
+  
+  .orden {
+    flex-direction: column;
+    align-items: center;
+  }
 }
