@@ -230,15 +230,15 @@
                     <h5>Contamos con gente con las mejores ideales para darle un toque especial a su fiesta, para conocerlas, seleccione primero el salón de su interés.</h5>
                 </div>
                 <div class = "iconosAlineacion">
-                    <form action = "" method = "POST">
-                        <select name = "seleccionarSalon" style = "color: black">
-                            <option value = "">Salón de interés (Requerido)</option>
-                            <option value = "">Azcapotzalco</option>
-                            <option value = "">Cd. Azteca</option>
-                            <option value = "">Claveria</option>
-                            <option value = "">El Rosario</option>
-                            <option value = "">La Condesa</option>
-                            <option value = "">Tacubaya</option>
+                    <form action = "Backend/formulario.php" method = "POST">
+                        <select name = "salonSeleccionado" style = "color: black">
+                            <option value = "NULL">Salón de interés (Requerido)</option>
+                            <option value = "Azcapotzalco">Azcapotzalco</option>
+                            <option value = "Cd. Azteca">Cd. Azteca</option>
+                            <option value = "Claveria">Claveria</option>
+                            <option value = "El Rosario">El Rosario</option>
+                            <option value = "La Condesa">La Condesa</option>
+                            <option value = "Tacubaya">Tacubaya</option>
                         </select><br><br>
                         <button type = "submit" style = "color: black">CONOCER SALÓN</button>
                     </form>

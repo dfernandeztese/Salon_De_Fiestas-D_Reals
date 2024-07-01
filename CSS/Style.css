@@ -137,6 +137,11 @@ section {
   background-color: #fff;
 }
 
+.ventanaOculta{
+  width: 900px;
+  height: 410px;
+}
+
 /* Página Web Responsiba*/
 @media screen and (max-width: 768px) {
   .icono {
