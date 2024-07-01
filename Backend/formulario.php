@@ -12,7 +12,9 @@ if ($conexion === false) {
     die(print_r(sqlsrv_errors(), true));
 } 
 
-$salon = $_POST["salonSeleccionado"];
+//$salon = $_POST["salonSeleccionado"];
+
+$salon = "Azcapotzalco";
 $costoMenu = 0;
 $fechaRango = date("Y-m-d");
 
@@ -92,7 +94,7 @@ if(strcmp($salon, "NULL") == 0){
     <div><br><br><h1><b>A CONTINUACIÓN EMPERARÁS A CREAR TU EVENTO</b></h1></div>
     <div>
         <fieldset>
-            <form action = "" method = "POST">
+            <form action = "Registro.php" method = "POST">
                 <label><b>1. QUE TIPO DE EVENTO ES</b></label><br> <!-- 1 -->
                 <input type="text" name="tipoEvento"><br><br>
                 <label><b>2. QUÉ COLORES QUIERE PARA ADORNAR EL SALÓN?</b></label><br> <!-- 2 -->
@@ -107,7 +109,7 @@ if(strcmp($salon, "NULL") == 0){
                     <label>LOMO DE CERDO EN HIERBAS FINAS</label><br><br>
                     <?php
                     echo <<< EOT
-                    <input type="hidden" name="costo" value="$costoMenu">
+                    <input type="hidden" name="costo" value="$costoMenu"> 
                     EOT;
                     ?>
                     
@@ -135,18 +137,17 @@ if(strcmp($salon, "NULL") == 0){
                     <label><b>Seleccione la fecha de su evento</b></label><br>
                     <?php
                     echo <<< EOT
-                        <input type = "date" name = "" min = "$fechaRango" max = "2024-12-31"><br><br>
+                        <input type = "date" name = "fechaSeleccionada" min = "$fechaRango" max = "2024-12-31"><br><br>
                     EOT;
                     ?>
                     <label><b>Seleccione el horario de su evento</b></label><br>
-                    <select name = "horario">
-                        <option value = "">Elige el horario</option>
+                    <select name = "horarioSeleccionado">
                         <option value = "07:00"><b>07:00 A.M</b></option>
                         <option value = "08:00"><b>08:00 A.M</b></option>
                         <option value = "09:00"><b>09:00 A.M</b></option>
                         <option value = "10:00"><b>10:00 A.M</b></option>
                         <option value = "11:00"><b>11:00 A.M</b></option>
-                        <option value = "12:00"><b>12:00 A.M</b></option>
+                        <option value = "12:00"><b>12:00 P.M</b></option>
                         <option value = "13:00"><b>01:00 P.M</b></option>
                         <option value = "14:00"><b>02:00 P.M</b></option>
                         <option value = "15:00"><b>03:00 P.M</b></option>
@@ -169,18 +170,18 @@ if(strcmp($salon, "NULL") == 0){
                 <label><b>Indique el número de plantilla que desea comprar</b></label><br>
                 <?php
                     echo <<< EOT
-                        <input type = "number" name = "" min = "$minimoP" max = "$maximoP"><br><br>
+                        <input type = "number" name = "numPlatillos" min = "$minimoP" max = "$maximoP"><br><br>
                     EOT;
                 ?>
                 <label><b>Servicio que desea incluir:</b></label><br>
-                <input type="checkbox" name="servicios" value="musica">
-                <label for="servicios">Música</label><br>
-                <input type="checkbox" name="servicios" value="meseros">
-                <label for="servicios">Meseros</label><br>
-                <input type="checkbox" name="servicios" value="barra">
-                <label for="servicios">Barra</label><br>
-                <input type="checkbox" name="servicios" value="parking">
-                <label for="servicios">Parking</label><br><br>
+                <input type="checkbox" name="musica" value="musica">
+                <label for="musica">Música</label><br>
+                <input type="checkbox" name="meseros" value="meseros">
+                <label for="meseros">Meseros</label><br>
+                <input type="checkbox" name="barra" value="barra">
+                <label for="barra">Barra</label><br>
+                <input type="checkbox" name="parking" value="parking">
+                <label for="parking">Parking</label><br><br>
 
                 <div>
                     <fieldset>

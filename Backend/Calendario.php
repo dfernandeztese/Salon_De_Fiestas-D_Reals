@@ -74,28 +74,25 @@
             $totalRegistros = 0;
             while ($row = sqlsrv_fetch_array($stmt1, SQLSRV_FETCH_ASSOC)) {
                 $totalRegistros = $row['ID_evento'];
-                echo "<br><br><br><br><h1>$totalRegistros</h1>";
+                //echo "<br><br><br><br><h1>$totalRegistros</h1>";
             }
             $cont = 1;
             while($cont <= $totalRegistros){
-                $fechaT = "SELECT fecha FROM Eventos WHERE ID_evento = ".$cont;
+                $fechaT = "SELECT fecha FROM Eventos WHERE ID_evento = '".$cont."'";
                 $stmt2  = sqlsrv_query($conexion, $fechaT);
 
                 if ($stmt2 === false) {
                     die(print_r(sqlsrv_errors(), true));
                 }
 
-                $fecha = 0;
-                while ($row = sqlsrv_fetch_array($stmt2, SQLSRV_FETCH_ASSOC)) {
-                    $fecha = $row['fecha'];
-                    echo "<br><br><br><br><h1>$fecha</h1>";
-                    //array_push($occupied_days, $fecha);
+                //$fecha = "";
+                while ($row2 = sqlsrv_fetch_array($stmt2, SQLSRV_FETCH_ASSOC)) {
+                    $fecha = $row2['fecha'];
+                    //echo $fecha->format('Y-m-d'); 
+                    array_push($occupied_days, $fecha->format('Y-m-d'));
                 }
+                $cont++;
             }
-
-
-            
-
             $calendar = new Calendar($month, $year);
             echo '<h2>' . date('F', mktime(0, 0, 0, $month, 1, $year)) . ' ' . $year . '</h2>';
             echo $calendar->show($occupied_days);
