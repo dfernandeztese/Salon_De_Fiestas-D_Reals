@@ -1,76 +1,106 @@
 <!DOCTYPE html>
-<html lang = "en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name = "viewport">
-        <title>Salon Tacubaya</title>
-		<link rel="stylesheet" href="CSS/stylesConde.css">
-    </head>
-    <body>
-		<div class = "orden">
-			<div>
-				<table border ="1" style = "border-collapse: 1px solid black">
-					<tr>
-						<th>
-							<h1>MENU</h1>
-						</th>
-					</tr>
+<head>
+    <meta charset="UTF-8">
+    <meta name = "viewport" content="width=device-width, initial-scale=1">
+    <title>Salon Tacubaya</title>
+    <link rel="stylesheet" href="CSS/Style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+</head>
+<body style = "background-color: #E3E4E5;">
+    <div class="barra-superior">
+        <ul>
+            <li><a class="active" href="index.html"><img alt = "HTML 5 Icon" src = "IMG/icono.png" class = "icono"></a></li>
+            <li><a href="index.html">Inicio</a></li>
+            <li class="iconoLogin"><a href=""><img class="iconoLoginImg" alt="iconoLogin" src="IMG/login_icono.png"></a></li>
+        </ul>
+    </div>
+	<div><br><br><br><h1 class = "iconosAlineacion"><b>CONOCE D´REALS TACUBAYA</b></h1></div>
+    <!--Carrusel-->
+    <div>
+		<div class="container">
+			<div id = "theCarousel" class="carousel slide" data-ride="carousel">
+					<ol class="carousel-indicators">
+						<li data-target="#theCarousel" data-slide-to="0" class="active"></li>
+						<li data-target="#theCarousel" data-slide-to="1"></li>
+						<li data-target="#theCarousel" data-slide-to="2"></li>
+						<li data-target="#theCarousel" data-slide-to="3"></li>
+						<li data-target="#theCarousel" data-slide-to="4"></li>
+						<li data-target="#theCarousel" data-slide-to="5"></li>
+					</ol>
+		  
+			<div class="carousel-inner" role="listbox">
+				<div class="item active">
+				  <img class = "imagenesCarrucel" src="IMG/Carrusel/SalonTacubaya/Imagen1.png"> 
+					<div class="carousel-caption d-none d-md-block"></div>
+				</div>
 		
-					<tr>
-						<td><b>Entradas</b></td>
-					</tr>
-		
-					<tr>
-						<td>
-							<ol>
-								<li>Creama de Elote</li>
-								<li>Crema Poblana</li>
-								<li>Crema de Champiñones</li>
-								<li>Propio</li>
-							</ol>
-						</td>
-					</tr>
-		
-					<tr>
-						<td><b>Medios</b></td>
-					</tr>
-		
-					<tr>
-						<td>
-							<ol>
-								<li>Spaguetti Excelencia</li>
-								<li>Spaguetti Cremoso</li>
-								<li>Macarrones con Queso</li>
-								<li>Propio</li>
-							</ol>
-						</td>
-					</tr>
-		
-					<tr>
-						<td><b>Fuertes</b></td>
-					</tr>
-		
-					<tr>
-						<td>
-							<ol>
-								<li>Chuleta Adobada</li>
-								<li>Pechuga Rellena con Chipotle</li>
-								<li>Pierna Enchilada</li>
-								<li>Propio</li>
-							</ol>
-						</td>
-					</tr>
-				</table>
+				<div class="item">
+				  <img class = "imagenesCarrucel" src="IMG/Carrusel/SalonTacubaya/Imagen2.png"> 
+				   <div class="carousel-caption d-none d-md-block"></div>
+				</div>
+		  
+				<div class="item">
+					<img class = "imagenesCarrucel" src="IMG/Carrusel/SalonTacubaya/Imagen3.png">
+					<div class="carousel-caption d-none d-md-block"></div>
+				</div>
+
+				<div class="item">
+					<img class = "imagenesCarrucel" src="IMG/Carrusel/SalonTacubaya/Imagen4.png"> 
+					<div class="carousel-caption d-none d-md-block"></div>
+				</div>
+
+				<div class="item">
+					<img class = "imagenesCarrucel" src="IMG/Carrusel/SalonTacubaya/Imagen5.png"> 
+					<div class="carousel-caption d-none d-md-block"></div>
+				</div>
+
+
+			  <a class="left carousel-control" href="#theCarousel" role="button" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+				<span class="sr-only">anterior</span>
+			  </a>
+			  <a class="right carousel-control" href="#theCarousel" role="button" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				<span class="sr-only">siguiente</span>
+			  </a>
 			</div>
-			<div><input type = "date" max = "2024-12-31"></div>
+		</div>
+</div>
+    <!--Termina el carrusel-->
+    <div class="ordenIconos">
+        <section>
+            <h2 class = "iconosAlineacion" style = "background-color: #F1B434;"><b class="titulo">Contacto</b></h2>
+            <p class="parraf">
+                Gael Hernandez Vargas<br>
+                Telefono: 55-8944-91<br>
+                drealslacondesa@gmail.com<br>
+            </p>
+        </section>
+        <section>
+            <h2 class = "iconosAlineacion" style = "background-color: #F1B434;"><b class="titulo">NUESTRO MENU</b></h2>
+            <p class="parraf">
+                CREMA:<br>
+                CREMA DE ELOTE<br>
+                PASTA:<br>
+                SPAGUETTI POBLANO<br>
+                PLATO FUERTE:<br>
+                LOMO DE CERDO EN HIRBAS FINAS<br><br>
+                EL PRECIO DEL MENU ES DE $420
+            </p>
+        </section>    
+    </div>
+    <div class="ordenIconos">
+        <div class = "iconosAlineacion">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13524.569713169989!2d-99.19326890951282!3d19.40132754981144!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff6bb5c1ec7b%3A0xbaea8391b4f0d367!2sTu%20Evento%20Sin%20L%C3%ADmites!5e0!3m2!1ses-419!2smx!4v1719806538892!5m2!1ses-419!2smx" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 		</div>
 
-		<div class = "orden">
-			<div>
-				<form action = "formulario.html" method = "POST">
-					<button type = "submit" class="btn">Apartar Fecha</button>
-				</form>
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.2428082231113!2d-99.19058212532697!3d19.401912241661197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff6191d26477%3A0x65e703e1f2cc3952!2sAv.%20Jalisco%20220-232%2C%20Tacubaya%2C%20Miguel%20Hidalgo%2C%2011870%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1716520793373!5m2!1ses-419!2smx" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-			</div>
-		</div>
-    </body>
+        <div>
+            <form action = "Backend/Formulario.php" method = "POST">
+				<input type = "hidden" name = "salonSeleccionado" value = "Tacubaya">
+				<button type = "submit" class="btn">Realizar Cotizacion</button>
+        </div>    
+    </div>
+</body>

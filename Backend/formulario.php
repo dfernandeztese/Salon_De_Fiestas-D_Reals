@@ -12,9 +12,7 @@ if ($conexion === false) {
     die(print_r(sqlsrv_errors(), true));
 } 
 
-//$salon = $_POST["salonSeleccionado"];
-
-$salon = "Azcapotzalco";
+$salon = $_POST["salonSeleccionado"];
 $costoMenu = 0;
 $fechaRango = date("Y-m-d");
 
@@ -46,33 +44,23 @@ sqlsrv_free_stmt($stmt1);
 sqlsrv_free_stmt($stmt2);
 sqlsrv_close($conexion);
 
-/*if ($maximoP === false) {
-    die(print_r(sqlsrv_errors(), true));
-}*/
-
 if(strcmp($salon, "Azcapotzalco") == 0){
     $costoMenu = 220;
 }
+
 if(strcmp($salon, "Cd. Azteca") == 0){
     $costoMenu = 310;
 }
 if(strcmp($salon, "Claveria") == 0){
     $costoMenu = 280;
 }
-if(strcmp($salon, "El Rosario") == 0){
-    $costoMenu = 0;
-}
+
 if(strcmp($salon, "La Condesa") == 0){
     $costoMenu = 340;
-
 }
+
 if(strcmp($salon, "Tacubaya") == 0){
     $costoMenu = 420;
-}
-if(strcmp($salon, "NULL") == 0){
-    echo <<< EOT
-    <script>history.go(-1)</script>
-    EOT;
 }
 ?>
 <!DOCTYPE html>
@@ -82,7 +70,6 @@ if(strcmp($salon, "NULL") == 0){
         <meta name = "viewport">
         <title>D'REALS - Solicitud</title>
         <link rel="stylesheet" href="../CSS/Style.css">
-        <!--<link rel="stylesheet" href="../CSS/StyleCalendar.css">-->
     </head>
     <body style = "background-color: #E3E4E5;">
     <div class="barra-superior">
@@ -95,8 +82,20 @@ if(strcmp($salon, "NULL") == 0){
     <div>
         <fieldset>
             <form action = "Registro.php" method = "POST">
+                <?php
+                echo <<< EOT
+                <input type="hidden" name="salon" value="$salon"> 
+                EOT;
+                ?>
                 <label><b>1. QUE TIPO DE EVENTO ES</b></label><br> <!-- 1 -->
-                <input type="text" name="tipoEvento"><br><br>
+                <!--<input type="text" name="tipoEvento"><br><br>-->
+                <select name = "tipoEvento">
+                        <option value = "1"><b>XV años</b></option>
+                        <option value = "2"><b>Boda</b></option>
+                        <option value = "3"><b>Graduación</b></option>
+                        <option value = "4"><b>Primera Comunión</b></option>
+                        <option value = "5"><b>Bautizo</b></option>
+                </select><br><br>
                 <label><b>2. QUÉ COLORES QUIERE PARA ADORNAR EL SALÓN?</b></label><br> <!-- 2 -->
                 <input type="text" name="colAdorno"><br><br>
                 <label><b>3. ELIJA SU MENU PARA SU EVENTO:</b></label><br><br> <!-- 3 -->
@@ -109,6 +108,9 @@ if(strcmp($salon, "NULL") == 0){
                     <label>LOMO DE CERDO EN HIERBAS FINAS</label><br><br>
                     <?php
                     echo <<< EOT
+                    <input type = "hidden" name = "entradas" value = "crema elote">
+                    <input type = "hidden" name = "medios" value = "spaguetti poblano">
+                    <input type = "hidden" name = "fuertes" value = "lomo de cerdo en hierbas finas">
                     <input type="hidden" name="costo" value="$costoMenu"> 
                     EOT;
                     ?>
@@ -209,3 +211,4 @@ if(strcmp($salon, "NULL") == 0){
         </fieldset>
     </div>
     </body>
+</html>

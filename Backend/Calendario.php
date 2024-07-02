@@ -63,7 +63,7 @@
             if ($conexion === false) {
                 die(print_r(sqlsrv_errors(), true));
             }
-            // AQUÍ ME QUEDE
+
             $idEvento = "SELECT TOP 1 ID_evento FROM Eventos ORDER BY ID_evento DESC";
             $stmt1  = sqlsrv_query($conexion, $idEvento);
 
@@ -74,7 +74,6 @@
             $totalRegistros = 0;
             while ($row = sqlsrv_fetch_array($stmt1, SQLSRV_FETCH_ASSOC)) {
                 $totalRegistros = $row['ID_evento'];
-                //echo "<br><br><br><br><h1>$totalRegistros</h1>";
             }
             $cont = 1;
             while($cont <= $totalRegistros){
@@ -85,7 +84,6 @@
                     die(print_r(sqlsrv_errors(), true));
                 }
 
-                //$fecha = "";
                 while ($row2 = sqlsrv_fetch_array($stmt2, SQLSRV_FETCH_ASSOC)) {
                     $fecha = $row2['fecha'];
                     //echo $fecha->format('Y-m-d'); 

@@ -14,17 +14,12 @@
         }
         if(strcmp($salon, "Cd. Azteca") == 0){
             echo <<< EOT
-                <h1>EN CONSTRUCCION</h1>
+                <meta http-equiv="Refresh" content="0; url='../salonCdadAz.html'" />
             EOT;
         }
         if(strcmp($salon, "Claveria") == 0){
             echo <<< EOT
                 <meta http-equiv="Refresh" content="0; url='../salonClavería.html'" />
-            EOT;
-        }
-        if(strcmp($salon, "El Rosario") == 0){
-            echo <<< EOT
-                <meta http-equiv="Refresh" content="0; url='../salonElRosario.html'" />
             EOT;
         }
         if(strcmp($salon, "La Condesa") == 0){
