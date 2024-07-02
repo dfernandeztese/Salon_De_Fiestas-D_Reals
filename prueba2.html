@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calendario con Fechas Seleccionables</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    .calendar {
+        width: 300px;
+        margin: 20px auto;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        overflow: hidden; /* Para evitar que los bordes redondeados se vean cortados */
+    }
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #f2f2f2;
+        padding: 8px;
+        border-bottom: 1px solid #ccc;
+    }
+    .days {
+        display: flex;
+        background-color: #f2f2f2;
+        padding: 8px;
+        border-bottom: 1px solid #ccc;
+    }
+    .day {
+        flex: 1;
+        text-align: center;
+        padding: 4px;
+    }
+    .dates {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 8px;
+    }
+    .day-item {
+        flex-basis: 14.28%; /* Para 7 días en una fila */
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        cursor: pointer;
+        border: 1px solid #ccc;
+    }
+    .blocked {
+        background-color: #f2f2f2;
+        color: #999;
+        cursor: default;
+    }
+</style>
+</head>
+<body>
+
+<div class="calendar" id="calendar">
+    <div class="header">
+        <button onclick="previousMonth()">&lt;</button>
+        <span id="month-year"></span>
+        <button onclick="nextMonth()">&gt;</button>
+    </div>
+    <div class="days">
+        <div class="day">Dom</div>
+        <div class="day">Lun</div>
+        <div class="day">Mar</div>
+        <div class="day">Mié</div>
+        <div class="day">Jue</div>
+        <div class="day">Vie</div>
+        <div class="day">Sáb</div>
+    </div>
+    <div class="dates" id="dates"></div>
+</div>
+
+<!-- Input oculto para almacenar la fecha seleccionada -->
+<!--<input type="date" id="fechaSeleccionada" name="fechaSeleccionada" style="display: none;">-->
+<input type="date" id="fechaSeleccionada" name="fechaSeleccionada">
+
+<script>
+    // Obtener referencias a elementos DOM relevantes
+    var monthYearElement = document.getElementById('month-year');
+    var datesContainer = document.getElementById('dates');
+    var fechaSeleccionadaInput = document.getElementById('fechaSeleccionada');
+
+    // Datos de ejemplo de fechas bloqueadas (en formato 'YYYY-MM-DD')
+    var blockedDates = ['2024-07-04', '2024-07-10', '2024-07-15'];
+
+    // Función para obtener el nombre del mes
+    function getMonthName(monthIndex) {
+        var months = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];
+        return months[monthIndex];
+    }
+
+    // Función para construir el calendario del mes actual
+    function buildCalendar(year, month) {
+        // Limpiar el contenedor de fechas
+        datesContainer.innerHTML = '';
+
+        // Establecer el título del mes y año
+        monthYearElement.textContent = getMonthName(month) + ' ' + year;
+
+        // Obtener el primer día y el último día del mes
+        var firstDay = new Date(year, month, 1);
+        var lastDay = new Date(year, month + 1, 0);
+
+        // Añadir días vacíos al principio si el primer día no es domingo (0)
+        for (var i = 0; i < firstDay.getDay(); i++) {
+            var emptyDay = document.createElement('div');
+            emptyDay.className = 'day-item empty';
+            datesContainer.appendChild(emptyDay);
+        }
+
+        // Añadir días del mes con lógica de bloqueo
+        for (var day = 1; day <= lastDay.getDate(); day++) {
+            var date = new Date(year, month, day);
+            var dayElement = document.createElement('div');
+            dayElement.className = 'day-item';
+            dayElement.textContent = day;
+            if (blockedDates.includes(date.toISOString().split('T')[0])) {
+                dayElement.classList.add('blocked');
+                dayElement.removeAttribute('onclick'); // Eliminar el evento click para días bloqueados
+            } else {
+                dayElement.setAttribute('onclick', 'selectDate("' + date.toISOString().split('T')[0] + '")'); // Agregar evento click para días disponibles
+            }
+            datesContainer.appendChild(dayElement);
+        }
+    }
+
+    // Función para seleccionar una fecha y actualizar el input
+    function selectDate(selectedDate) {
+        // Actualizar el valor del input con la fecha seleccionada
+        fechaSeleccionadaInput.value = selectedDate;
+    }
+
+    // Función para avanzar al siguiente mes
+    function nextMonth() {
+        currentMonth++;
+        if (currentMonth > 11) {
+            currentMonth = 0;
+            currentYear++;
+        }
+        buildCalendar(currentYear, currentMonth);
+    }
+
+    // Función para retroceder al mes anterior
+    function previousMonth() {
+        currentMonth--;
+        if (currentMonth < 0) {
+            currentMonth = 11;
+            currentYear--;
+        }
+        buildCalendar(currentYear, currentMonth);
+    }
+
+    // Variables para controlar el mes y el año actuales
+    var currentDate = new Date();
+    var currentMonth = currentDate.getMonth();
+    var currentYear = currentDate.getFullYear();
+
+    // Construir el calendario inicial
+    buildCalendar(currentYear, currentMonth);
+</script>
+
+</body>
+</html>
