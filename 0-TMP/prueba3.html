@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deshabilitar Fechas</title>
+</head>
+<body>
+    <input type="date" id="fecha">
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            /*const fechasBloqueadas = [
+                '2024-07-04', // Ejemplo de fechas bloqueadas
+                '2024-07-05',
+                '2024-07-06'
+            ];*/
+
+            const fechasBloqueadas = [
+                '2024-06-15', // Ejemplo de fechas bloqueadas
+                '2024-07-20',
+                '2024-09-05',
+                '2024-05-30',
+                '2024-08-25'
+            ];
+
+            const inputFecha = document.getElementById('fecha');
+            
+            inputFecha.addEventListener('input', (e) => {
+                if (fechasBloqueadas.includes(e.target.value)) {
+                    e.target.value = ''; // Limpiar el campo si la fecha está bloqueada
+                    alert('La fecha seleccionada está bloqueada. Por favor, elija otra fecha.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

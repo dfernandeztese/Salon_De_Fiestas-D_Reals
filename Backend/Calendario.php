@@ -30,10 +30,10 @@
             <input type="hidden" id="yearInput" name="year" value="<?php echo isset($_GET['year']) ? $_GET['year'] : date('Y'); ?>">
         </form>
         <div class = "iconosAlineacion">
-            <button onclick = "changeMonth(-1)">←</button>
+            <button class = "btn" onclick = "changeMonth(-1)">←</button>
         </div>
         <div class = "iconosAlineacion">
-            <button onclick = "changeMonth(1)">→</button>
+            <button class = "btn" onclick = "changeMonth(1)">→</button>
         </div>
     </div>
     <div class = "ordenIconos">
@@ -43,14 +43,8 @@
             $month = isset($_GET['month']) ? intval($_GET['month']) : date('n');
             $year = isset($_GET['year']) ? intval($_GET['year']) : date('Y');
 
-            /*$occupied_days = [
-                '2024-01-10', '2024-02-15', '2024-03-20', '2024-04-25', 
-                '2024-05-05', '2024-06-10', '2024-07-15', '2024-08-20', 
-                '2024-09-25', '2024-10-30', '2024-11-10', '2024-12-15', '2024-01-01'
-            ];*/
-
             $occupied_days = [];
-
+            // Credenciales del servidor
             $nombreServidor = "localhost";
             $credenciales = array(
                 "Database" => "salon",
@@ -85,9 +79,8 @@
                 }
 
                 while ($row2 = sqlsrv_fetch_array($stmt2, SQLSRV_FETCH_ASSOC)) {
-                    $fecha = $row2['fecha'];
-                    //echo $fecha->format('Y-m-d'); 
-                    array_push($occupied_days, $fecha->format('Y-m-d'));
+                    $fecha = $row2['fecha']->format('Y-m-d');
+                    array_push($occupied_days, $fecha);
                 }
                 $cont++;
             }
@@ -97,6 +90,5 @@
             ?>
         </div>
     </div>
-    
 </body>
 </html>

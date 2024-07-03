@@ -1,4 +1,5 @@
 <?php
+// Credenciales del servidor
 $nombreServidor = "localhost";
 $credenciales = array(
     "Database" => "salon",
@@ -25,7 +26,8 @@ $costo = $_POST["costo"];
 $numAdultos = $_POST["adultos"];
 $numNinos = $_POST["ninos"];
 $fechaSeleccionada = $_POST["fechaSeleccionada"];
-$horarioSeleccionado = $_POST["horarioSeleccionado"];
+$horarioSeleccionadoIni = $_POST["horarioSeleccionadoIni"];
+$horarioSeleccionadoFin = $_POST["horarioSeleccionadoFin"];
 $numPlatillos = $_POST["numPlatillos"];
 
 // Entrada
@@ -275,7 +277,16 @@ for($a = 0; $a < count($verificarExistencia); $a++){
     }
 }
 
-$costoTotal = ($costo*$numPlatillos) + $costoMusica + $costoMeseros + $costoBarra + $costoParking;
+//$costoTotal = ($costo*$numPlatillos) + $costoMusica + $costoMeseros + $costoBarra + $costoParking;
+$costo = floatval($costo);
+$numPlatillos = intval($numPlatillos);
+$costoMusica = floatval($costoMusica);
+$costoMeseros = floatval($costoMeseros);
+$costoBarra = floatval($costoBarra);
+$costoParking = floatval($costoParking);
+$costoTotal = 0;
+
+$costoTotal = ($costo * $numPlatillos) + $costoMusica + $costoMeseros + $costoBarra + $costoParking;
 
 // Cliente
 $nuevoRegistro = "INSERT INTO Cliente (nombre, apellido_p, apellido_m, telefono, correo)  VALUES (?, ?, ?, ?, ?)";
@@ -303,8 +314,8 @@ while ($row = sqlsrv_fetch_array($stmtClienteTmp, SQLSRV_FETCH_ASSOC)) {
 //sqlsrv_close($conexion);
 
 // Eventos
-$nuevoEvento= "INSERT INTO Eventos (fecha, hora_ini, personas, tipo_evento, ID_menu)  VALUES (?, ?, ?, ?, ?)";
-$paramnuevoEvento = array($fechaSeleccionada, $horarioSeleccionado, $numPlatillos, $tipoEvento, $idComida);
+$nuevoEvento= "INSERT INTO Eventos (fecha, hora_ini, hora_fin, personas, tipo_evento, ID_menu)  VALUES (?, ?, ?, ?, ?, ?)";
+$paramnuevoEvento = array($fechaSeleccionada, $horarioSeleccionadoIni, $horarioSeleccionadoFin, $numPlatillos, $tipoEvento, $idComida);
 
 $stmtNuevoEvento = sqlsrv_query($conexion, $nuevoEvento, $paramnuevoEvento);
 
@@ -356,7 +367,8 @@ while ($row = sqlsrv_fetch_array($stmtContratoTmp, SQLSRV_FETCH_ASSOC)) {
     $idContrato = $row['ID_contrato'];
 }
 
-/*echo "ID Contrato: ".$idContrato."<br>";
+/*echo "<br><br><br><br>";
+echo "ID Contrato: ".$idContrato."<br>";
 echo "Salon: ".$salon."<br>";
 echo "Tipo de evento: ".$tipoEvento."<br>";
 echo "Color de adorno: ".$colAdorno."<br>";
@@ -365,7 +377,8 @@ echo "Costo: ".$costo."<br>";
 echo "N° Adultos: ".$numAdultos."<br>";
 echo "N° Niños: ".$numNinos."<br>";
 echo "Fecha Seleccionado: ".$fechaSeleccionada."<br>";
-echo "Horario Seleccionado: ".$horarioSeleccionado."<br>";
+echo "Horario Seleccionado Inicio: ".$horarioSeleccionadoIni."<br>";
+echo "Horario Seleccionado Fin: ".$horarioSeleccionadoFin."<br>";
 echo "Numero de platillos: ".$numPlatillos."<br>";
 
 echo "Musica: ".$musica."<br>";
@@ -389,19 +402,55 @@ echo "Costo Total: $".$costoTotal;*/
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/Style.css">
+    <link rel="stylesheet" href="../CSS/Style.css">
     <title>D'REALS - Registro</title>
 </head>
-<body>
+<body style = "background-color: #E3E4E5;">
+    <div class="barra-superior">
+        <ul>
+            <li><a class="active" href="../index.html"><img alt = "HTML 5 Icon" src = "../IMG/icono.png" class = "icono"></a></li>
+            <li><a href="../index.html">Inicio</a></li>
+            <li class="iconoLogin"><a href=""><img class="iconoLoginImg" alt="iconoLogin" src="../IMG/login_icono.png"></a></li>
+        </ul>
+    </div>
     <section>
-        <div background = "while">
+        <div style = "background-color: while;">
+            <?php
+            echo "<br><br><br><h3>SU EVENTO TIENE UN PRECIO DE $".$costoTotal."</h3>";
+            ?>
             <h4>REALIZAR SU PAGO DE 10% PARA QUE SU FECHA SEA APARTADA O BIEN PARA LIQUIDAR SU PAGO AL SIGUIENTE NUMERO DE CUENTA</h4>
-            <h5>Banco: Banco</h5>
-            <h5>Cuenta: 1234567890</h5>
-            <h5>CLABE: 012345678901234567</h5>
-            <h5>Referencia: EV20240625JP01</h5><br><br><br>
+            <h5><b>Banco: </b>Banco</h5>
+            <h5><b>Cuenta: </b>1234567890</h5>
+            <h5><b>CLABE: </b>012345678901234567</h5>
+            <h5><b>Referencia: </b>EV20240625JP01</h5><br><br><br>
             <h4>GRACIAS POR SU PREFERENCIA!!!</h4>
             <h4>Su fecha se apartara cuando haya dado el 10% del pago</h4>
+            <form action = "FormatoContrato.php" method = "POST" target="_blank">
+                <?php
+                    $fechaActual = date("d-m-Y");
+                    $nombreCompleto = $nombre." ".$apellidoP." ".$apellidoM;
+                    echo <<< EOT
+                        <input type = "hidden" name = "folio" value = "$idContrato">
+                        <input type = "hidden" name = "fechaActual" value = "$fechaActual">
+                        <input type = "hidden" name = "nombreCompleto" value = "$nombreCompleto">
+                        <input type = "hidden" name = "telefono" value = "$telefono">
+                        <input type = "hidden" name = "correo" value = "$correo">
+                        <input type = "hidden" name = "ubicacion" value = "$salon">
+                        <input type = "hidden" name = "tipoEvento" value = "$tipoEvento">
+                        <input type = "hidden" name = "fechaEvento" value = "$fechaSeleccionada">
+                        <input type = "hidden" name = "horaIni" value = "$horarioSeleccionadoIni">
+                        <input type = "hidden" name = "horaFin" value = "$horarioSeleccionadoFin">
+                        <input type = "hidden" name = "costoMenu" value = "$costo">
+                        <input type = "hidden" name = "numInvitados" value = "$numPlatillos">
+                        <input type = "hidden" name = "costoMusica" value = "$costoMusica">
+                        <input type = "hidden" name = "costoMeseros" value = "$costoMeseros">
+                        <input type = "hidden" name = "costoBarra" value = "$costoBarra">
+                        <input type = "hidden" name = "costoParking" value = "$costoParking">
+                        <input type = "hidden" name = "costoTotal" value = "$costoTotal">
+                    EOT;
+                ?>
+                <button class = "btn" type = "submit" class = "boton"><span>IMPRIMIR CONTRATO</span></button>
+            </form>
         </div>
     </section>
 </body>

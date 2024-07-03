@@ -140,6 +140,7 @@ section {
 .ventanaOculta{
   width: 900px;
   height: 410px;
+  border:none;
 }
 
 .btn{

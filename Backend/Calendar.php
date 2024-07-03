@@ -1,5 +1,4 @@
 <?php
-
 class Calendar {
     private $month;
     private $year;
@@ -59,5 +58,4 @@ class Calendar {
         return $html;
     }
 }
-
 ?>
