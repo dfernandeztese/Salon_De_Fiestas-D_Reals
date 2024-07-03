@@ -113,10 +113,10 @@ insert into Salones values('Salon CD. Azteca', 100, 250, 'CD. Azteca')
 insert into Salones values('Salon Tacubaya', 100, 300, 'Tacubaya')
 --insertamos clientes
 insert into Cliente values('Mario', 'Ortiz', 'Lopez','5512859375', '9375@live.com')
-insert into Cliente values ('María', 'González', 'Pérez', '5512345678', '5678@gmail.com')
-insert into Cliente values ('Juan', 'Hernández', 'Ramírez', '5598765432', '5432@hotmail.com')
-insert into Cliente values ('Ana', 'Martínez', 'López', '5534567890', '7890@yahoo.com')
-insert into Cliente values ('Carlos', 'Sánchez', 'Torres', '5543216789', '6789@outlook.com')
+insert into Cliente values ('Marï¿½a', 'Gonzï¿½lez', 'Pï¿½rez', '5512345678', '5678@gmail.com')
+insert into Cliente values ('Juan', 'Hernï¿½ndez', 'Ramï¿½rez', '5598765432', '5432@hotmail.com')
+insert into Cliente values ('Ana', 'Martï¿½nez', 'Lï¿½pez', '5534567890', '7890@yahoo.com')
+insert into Cliente values ('Carlos', 'Sï¿½nchez', 'Torres', '5543216789', '6789@outlook.com')
 --agregamos los posibles servicios
 insert into Servicios values('musica',2000)
 insert into Servicios values('maestro de ceremonia',500)
@@ -128,7 +128,7 @@ insert into Servicios values('meseros',400)
 insert into Servicios values('barra',400)
 insert into Servicios values('parking',200)
 --agregamos los tipos de eventos
-insert into Tipo_eventos values('xv años')
+insert into Tipo_eventos values('xv aï¿½os')
 insert into Tipo_eventos values('boda')
 insert into Tipo_eventos values('graduacion')
 insert into Tipo_eventos values('primera comunion')
@@ -136,7 +136,7 @@ insert into Tipo_eventos values('bautizo')
 --entradas del menu
 insert into Entradas values('crema elote')
 insert into Entradas values('crema poblana')
-insert into Entradas values('crema de champiñones')
+insert into Entradas values('crema de champiï¿½ones')
 insert into Entradas values('propio')
 --platos medios del menu
 insert into Medios values('spaguetti excelencia')
@@ -157,7 +157,7 @@ insert into Comida values(3,3,3,120)
 insert into Comida values(4,1,1,200)
 insert into Comida values(1,4,2,250)
 --agregamos unos eventos
-insert into Eventos values ('2024-06-15', '18:00', '23:00', 200, (select ID_tipoE from Tipo_eventos where nombre = 'xv años'), (select ID_menu from Comida where ID_menu = 1))
+insert into Eventos values ('2024-06-15', '18:00', '23:00', 200, (select ID_tipoE from Tipo_eventos where nombre = 'xv aï¿½os'), (select ID_menu from Comida where ID_menu = 1))
 insert into Eventos values ('2024-07-20', '12:00', '18:00', 150, (select ID_tipoE from Tipo_eventos where nombre = 'boda'), (select ID_menu from Comida where ID_menu = 2))
 insert into Eventos values ('2024-09-05', '10:00', '16:00', 300, (select ID_tipoE from Tipo_eventos where nombre = 'graduacion'), (select ID_menu from Comida where ID_menu = 3))
 insert into Eventos values ('2024-05-30', '14:00', '19:00', 100, (select ID_tipoE from Tipo_eventos where nombre = 'primera comunion'),(select ID_menu from Comida where ID_menu = 4))
@@ -216,10 +216,14 @@ insert into Eventos_salones values ((select ID_salon from Salones where nombre =
 insert into Eventos_salones values ((select ID_salon from Salones where nombre = 'Salon Tacubaya'), (select ID_evento from Eventos where fecha = '2024-08-25' and hora_ini = '09:00'))
 --generamos los contratos de acuerdo al cliente y evento
 insert into Contratos values ((select ID_cliente from Cliente where nombre = 'Mario' and apellido_p = 'Ortiz' and apellido_m = 'Lopez'), (select ID_evento from Eventos where fecha = '2024-06-15' and hora_ini = '18:00'))
-insert into Contratos values ((select ID_cliente from Cliente where nombre = 'Juan' and apellido_p = 'Hernández' and apellido_m = 'Ramírez'), (select ID_evento from Eventos where fecha = '2024-07-20' and hora_ini = '12:00'))
-insert into Contratos values ((select ID_cliente from Cliente where nombre = 'Ana' and apellido_p = 'Martínez' and apellido_m = 'López'), (select ID_evento from Eventos where fecha = '2024-09-05' and hora_ini = '10:00'))
-insert into Contratos values ((select ID_cliente from Cliente where nombre = 'Carlos' and apellido_p = 'Sánchez' and apellido_m = 'Torres'), (select ID_evento from Eventos where fecha = '2024-05-30' and hora_ini = '14:00'))
-insert into Contratos values ((select ID_cliente from Cliente where nombre = 'Laura' and apellido_p = 'García' and apellido_m = 'Núñez'), (select ID_evento from Eventos where fecha = '2024-08-25' and hora_ini = '09:00'))
+insert into Contratos values ((select ID_cliente from Cliente where nombre = 'Juan' and apellido_p = 'Hernï¿½ndez' and apellido_m = 'Ramï¿½rez'), (select ID_evento from Eventos where fecha = '2024-07-20' and hora_ini = '12:00'))
+insert into Contratos values ((select ID_cliente from Cliente where nombre = 'Ana' and apellido_p = 'Martï¿½nez' and apellido_m = 'Lï¿½pez'), (select ID_evento from Eventos where fecha = '2024-09-05' and hora_ini = '10:00'))
+insert into Contratos values ((select ID_cliente from Cliente where nombre = 'Carlos' and apellido_p = 'Sï¿½nchez' and apellido_m = 'Torres'), (select ID_evento from Eventos where fecha = '2024-05-30' and hora_ini = '14:00'))
+insert into Contratos values ((select ID_cliente from Cliente where nombre = 'Laura' and apellido_p = 'Garcï¿½a' and apellido_m = 'Nï¿½ï¿½ez'), (select ID_evento from Eventos where fecha = '2024-08-25' and hora_ini = '09:00'))
+
+-- Ingresamos algunos registroen la tabla Administrador
+insert into Administrador (nombre, contrasenia) values ('oscar_hernandez', 'AsdfghjkL123'),
+('karen_oran', 'LkjhgfdsA1233');
 
 --creamos la vista de Clientes y sus Eventos
 create view ClientesEventos as
@@ -414,6 +418,7 @@ select * from Fuertes
 select * from Medios
 select * from Entradas
 select * from Comida
+select * from Administrador
 --uso de las vistas
 select * from ClientesEventos
 select * from SalonesServicios
@@ -422,4 +427,4 @@ select * from EventosPorSalon
 select * from MenusCompletos
 select * from vw_ResumenEventosTipo
 select * from ContratosPorSalon
---agregar en el administrador que pueda actualizar el contrato, añadiendo o quitando servicios
+--agregar en el administrador que pueda actualizar el contrato, aï¿½adiendo o quitando servicios

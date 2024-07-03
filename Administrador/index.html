@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D'REALS</title>
+    <link rel="stylesheet" href="../CSS/Style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body style = "background-color: #E3E4E5;">
+    <div>
+        <ul>
+            <li><a class="active" href="../index.html"><img alt = "HTML 5 Icon" src = "../IMG/icono.png" class = "icono"></a></li>
+            <li><a href="../index.html">Inicio</a></li>
+            <li class="iconoLogin"><a href=""><img class="iconoLoginImg" alt="iconoLogin" src="../IMG/login_icono_Salir.png"></a></li>
+        </ul>
+    </div>
+    <div class="loginFlex">
+        <div class="login-container">
+            <h2>Iniciar Sesión</h2>
+            <form action="../Backend/Login.php" method="POST">
+                <input type="text" name="username" placeholder="Nombre de usuario" required>
+                <input type="password" name="password" placeholder="Contraseña" required>
+                <button type="submit">Ingresar</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
