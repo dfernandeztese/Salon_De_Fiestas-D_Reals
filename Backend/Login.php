@@ -31,13 +31,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC);
 
     if ($row) {
-        // Inicio de sesión exitoso
-        echo "Inicio de sesión exitoso. Bienvenido, " . $row['nombre'] . "!";
-        // Aquí puedes redirigir al usuario a otra página o iniciar una sesión
-        // header("Location: pagina_protegida.php");
+        //echo "Inicio de sesión exitoso. Bienvenido, " . $row['nombre'] . "!";
+        echo <<< EOT
+            <meta http-equiv="Refresh" content="0; url='../Administrador/clientes.html'" />
+        EOT;
     } else {
-        // Inicio de sesión fallido
-        echo "Nombre de usuario o contraseña incorrectos.";
+        //echo "Nombre de usuario o contraseña incorrectos.";
+        echo <<< EOT
+            <script>
+                alert('Nombre de usuario o contraseña incorrectos');
+                history.go(-1)
+            </script>
+        EOT;
     }
 
     sqlsrv_free_stmt($stmt);
