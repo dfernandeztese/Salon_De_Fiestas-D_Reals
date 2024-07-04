@@ -213,21 +213,6 @@ $pdf->SetTextColor(0, 0, 0);
 $pdf->Cell(0, 9, "$".$costoParking, 1, 0, 'C'); // Celda vacia
 $pdf->Ln(9);
 
-// Total
-/*$pdf->SetTextColor(255, 255, 255);
-$pdf->SetFillColor(0, 0, 0);
-$pdf->SetFont('Arial', 'B', 12);
-$pdf->Cell(0, 9, "COSTO TOTAL", 1, 0, 'C', true);
-$pdf->Ln(9);
-
-$pdf->SetFont('Arial', 'B', 10);
-$pdf->SetFillColor(255, 255, 255); // Relleno
-$pdf->SetTextColor(0, 0, 0); // Color de texto
-$pdf->Cell(45, 9, "Costo Total", 1, 0, 'C', true);
-$pdf->SetTextColor(0, 0, 0);
-$pdf->Cell(0, 9, "$".$costoTotal, 1, 0, 'C'); // Celda vacia
-*/
-
 // Costo total
 $pdf->SetFillColor(255, 255, 255); // Relleno
 $pdf->SetTextColor(0, 0, 0); // Color de texto
@@ -236,7 +221,7 @@ $pdf->SetTextColor(0, 0, 0);
 $pdf->Cell(0, 9, "$".$costoTotal, 1, 0, 'R'); // Celda vacia
 $pdf->Ln(9);
 
-// Clausula
+// CLAUSULAS
 $pdf->SetTextColor(255, 255, 255); 
 $pdf->SetFillColor(0, 0, 0); 
 $pdf->SetFont('Arial','B',11); 

@@ -222,8 +222,9 @@ insert into Contratos values ((select ID_cliente from Cliente where nombre = 'Ca
 insert into Contratos values ((select ID_cliente from Cliente where nombre = 'Laura' and apellido_p = 'Garc�a' and apellido_m = 'N��ez'), (select ID_evento from Eventos where fecha = '2024-08-25' and hora_ini = '09:00'))
 
 -- Ingresamos algunos registroen la tabla Administrador
-insert into Administrador (nombre, contrasenia) values ('oscar_hernandez', 'AsdfghjkL123'),
-('karen_oran', 'LkjhgfdsA1233');
+insert into Administrador (nombre, contrasenia) values ('Admin1', '123456789'),
+('Admin2', '987654321'),
+('Admin3', '654321');
 
 --creamos la vista de Clientes y sus Eventos
 create view ClientesEventos as

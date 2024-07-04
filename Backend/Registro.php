@@ -1,4 +1,4 @@
-<?php
+<?php // BD
 // Credenciales del servidor
 $nombreServidor = "localhost";
 $credenciales = array(
@@ -156,7 +156,7 @@ for($a = 0; $a < count($verificarExistencia); $a++){
                 die(print_r(sqlsrv_errors(), true));
             }
 
-            while ($row2 = sqlsrv_fetch_array($stmt1, SQLSRV_FETCH_ASSOC)) {
+            while ($row2 = sqlsrv_fetch_array($stmt1_2, SQLSRV_FETCH_ASSOC)) {
                 $costoMusica = $row2['costo'];
             }
             // Servicios_salon
@@ -410,7 +410,7 @@ echo "Costo Total: $".$costoTotal;*/
         <ul>
             <li><a class="active" href="../index.html"><img alt = "HTML 5 Icon" src = "../IMG/icono.png" class = "icono"></a></li>
             <li><a href="../index.html">Inicio</a></li>
-            <li class="iconoLogin"><a href=""><img class="iconoLoginImg" alt="iconoLogin" src="../IMG/login_icono.png"></a></li>
+            <li class="iconoLogin"><a href="../index.html"><img class="iconoLoginImg" alt="iconoLogin" src="../IMG/login_icono_Salir.png"></a></li>
         </ul>
     </div>
     <section>
@@ -422,7 +422,7 @@ echo "Costo Total: $".$costoTotal;*/
             <h5><b>Banco: </b>Banco</h5>
             <h5><b>Cuenta: </b>1234567890</h5>
             <h5><b>CLABE: </b>012345678901234567</h5>
-            <h5><b>Referencia: </b>EV20240625JP01</h5><br><br><br>
+            <h5><b>Referencia: </b>EV20240625JP01</h5><br><br>
             <h4>GRACIAS POR SU PREFERENCIA!!!</h4>
             <h4>Su fecha se apartara cuando haya dado el 10% del pago</h4>
             <form action = "FormatoContrato.php" method = "POST" target="_blank">

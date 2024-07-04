@@ -1,5 +1,5 @@
-<?php
-// Configuración de la conexión a la base de datos
+<?php  // BD
+// Credenciales
 $serverName = "localhost";
 $connectionOptions = array(
     "Database" => "salon",

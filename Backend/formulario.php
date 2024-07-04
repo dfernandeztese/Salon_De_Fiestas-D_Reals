@@ -1,4 +1,4 @@
-<?php
+<?php // BD
 // Credenciales del servidor
 $nombreServidor = "localhost";
 $credenciales = array(
