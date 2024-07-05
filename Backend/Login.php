@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($row) {
         //echo "Inicio de sesión exitoso. Bienvenido, " . $row['nombre'] . "!";
         echo <<< EOT
-            <meta http-equiv="Refresh" content="0; url='../Administrador/clientes.html'" />
+            <meta http-equiv="Refresh" content="0; url='../Administrador/clientes.php'" />
         EOT;
     } else {
         //echo "Nombre de usuario o contraseña incorrectos.";

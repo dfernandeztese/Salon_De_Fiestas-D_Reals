@@ -287,6 +287,18 @@ from
     inner join Eventos_salones es on s.ID_salon = es.ID_salon
     inner join Eventos e on es.ID_evento = e.ID_evento
     inner join Tipo_eventos te on e.tipo_evento = te.ID_tipoE;
+
+--Vista de Cintrato desde el administrador
+create view ContratosPorClientes as
+select 
+    c.ID_contrato,
+    u.nombre,
+    u.telefono,
+    u.correo
+from 
+    Contratos c
+    inner join Cliente u on c.ID_cliente = u.ID_cliente;
+
 --Vista de Eventos con Menus detallados
 create view EventosConMenus as
 select 
@@ -428,4 +440,5 @@ select * from EventosPorSalon
 select * from MenusCompletos
 select * from vw_ResumenEventosTipo
 select * from ContratosPorSalon
+select * from ContratosPorClientes
 --agregar en el administrador que pueda actualizar el contrato, a�adiendo o quitando servicios
