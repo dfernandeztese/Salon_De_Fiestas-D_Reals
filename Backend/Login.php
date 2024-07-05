@@ -1,14 +1,14 @@
 <?php  // BD
 // Credenciales
-$serverName = "localhost";
-$connectionOptions = array(
+$nombreServidor = "serverdreals.database.windows.net";
+$credenciales = array(
     "Database" => "salon",
-    "Uid" => "sa",
-    "PWD" => "123456789"
+    "Uid" => "Admin_D-Reals",
+    "PWD" => '$Qwerty369#'
 );
 
 // Conexión a la base de datos
-$conn = sqlsrv_connect($serverName, $connectionOptions);
+$conn = sqlsrv_connect($nombreServidor, $credenciales);
 
 if ($conn === false) {
     die(print_r(sqlsrv_errors(), true));
